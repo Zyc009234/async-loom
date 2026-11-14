@@ -5,15 +5,15 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 
 ## 下载
 
-- [GitHub Release v0.6.1](https://github.com/Zyc009234/async-loom/releases/tag/v0.6.1)
-- [Windows 安装版](https://www.zhaoyoucai.xyz/downloads/async-loom/0.6.1/async-loom-setup-0.6.1.exe)
-- [Windows MSI](https://www.zhaoyoucai.xyz/downloads/async-loom/0.6.1/async-loom-0.6.1-x64-zh-CN.msi)
+- [GitHub Release v0.7.0](https://github.com/Zyc009234/async-loom/releases/tag/v0.7.0)
+- [Windows 安装版](https://www.zhaoyoucai.xyz/downloads/async-loom/0.7.0/async-loom-setup-0.7.0.exe)
+- [Windows MSI](https://www.zhaoyoucai.xyz/downloads/async-loom/0.7.0/async-loom-0.7.0-x64-zh-CN.msi)
 - [产品介绍与使用教程](https://www.zhaoyoucai.xyz/async/)
 
 飞牛原生安装包不在 GitHub Release 中。安装包存放于飞牛文件空间：
 
 ```text
-/vol1/1000/loom/async-loom-0.6.1.fpk
+/vol1/1000/loom/async-loom-0.7.0.fpk
 ```
 
 ## 当前能力
@@ -23,7 +23,10 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 - 可选摄像头圆形气泡，支持设备选择、四角位置和小/中/大尺寸
 - 摄像头气泡可在录制准备界面任意拖动
 - Windows 原生流式直传，不经过前端内存；失败自动重试
-- 录制后首尾裁剪和自动生成分享封面
+- 录制中支持暂停和继续，暂停时间不写入视频
+- 停止后先预览，再拖动时间轴裁剪视频头尾
+- 可选择任意当前画面作为分享封面
+- 设置页在线检查更新，只从官网下载并校验 SHA256
 - ffmpeg 编码 MP4，停止后直接上传到飞牛
 - 飞牛本地 SQLite 保存视频元数据
 - HTTP Range 播放，支持浏览器拖动进度
@@ -45,6 +48,6 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 
 ## 版本
 
-当前版本：`0.6.1`
+当前版本：`0.7.0`
 
 飞牛应用依赖飞牛应用中心的 Node.js v22，不使用 Docker。
