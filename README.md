@@ -5,15 +5,15 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 
 ## 下载
 
-- [GitHub Release v0.3.1](https://github.com/Zyc009234/async-loom/releases/tag/v0.3.1)
-- [Windows 安装版](https://www.zhaoyoucai.xyz/downloads/async-loom/0.3.1/async-loom-setup-0.3.1.exe)
-- [Windows MSI](https://www.zhaoyoucai.xyz/downloads/async-loom/0.3.1/async-loom-0.3.1-x64-zh-CN.msi)
+- [GitHub Release v0.3.2](https://github.com/Zyc009234/async-loom/releases/tag/v0.3.2)
+- [Windows 安装版](https://www.zhaoyoucai.xyz/downloads/async-loom/0.3.2/async-loom-setup-0.3.2.exe)
+- [Windows MSI](https://www.zhaoyoucai.xyz/downloads/async-loom/0.3.2/async-loom-0.3.2-x64-zh-CN.msi)
 - [产品介绍与使用教程](https://www.zhaoyoucai.xyz/async/)
 
 飞牛原生安装包不在 GitHub Release 中。安装包存放于飞牛文件空间：
 
 ```text
-/vol1/1000/loom/async-loom-0.3.1.fpk
+/vol1/1000/loom/async-loom-0.3.2.fpk
 ```
 
 ## 当前能力
@@ -31,6 +31,7 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 - 独立访客数与行动按钮点击统计
 - 视频说明、行动按钮、默认播放速度和静音自动播放
 - 视频库标题/说明搜索
+- iframe 嵌入代码、近 7 天观看数据和评论管理
 - 时间点评论和表情反馈
 
 公网分享需要飞牛已经有可访问的域名、公网 IP、DDNS 或反向代理，并正确指向
@@ -38,6 +39,6 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 
 ## 版本
 
-当前版本：`0.3.1`
+当前版本：`0.3.2`
 
 飞牛应用依赖飞牛应用中心的 Node.js v22，不使用 Docker。
