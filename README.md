@@ -5,15 +5,15 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 
 ## 下载
 
-- [GitHub Release v0.8.0](https://github.com/Zyc009234/async-loom/releases/tag/v0.8.0)
-- [Windows 安装版](https://www.zhaoyoucai.xyz/downloads/async-loom/0.8.0/async-loom-setup-0.8.0.exe)
-- [Windows MSI](https://www.zhaoyoucai.xyz/downloads/async-loom/0.8.0/async-loom-0.8.0-x64-zh-CN.msi)
+- [GitHub Release v0.8.1](https://github.com/Zyc009234/async-loom/releases/tag/v0.8.1)
+- [Windows 安装版](https://www.zhaoyoucai.xyz/downloads/async-loom/0.8.1/async-loom-setup-0.8.1.exe)
+- [Windows MSI](https://www.zhaoyoucai.xyz/downloads/async-loom/0.8.1/async-loom-0.8.1-x64-zh-CN.msi)
 - [产品介绍与使用教程](https://www.zhaoyoucai.xyz/async/)
 
 飞牛原生安装包不在 GitHub Release 中。安装包存放于飞牛文件空间：
 
 ```text
-/vol1/1000/loom/async-loom-0.8.0.fpk
+/vol1/1000/loom/async-loom-0.8.1.fpk
 ```
 
 ## 当前能力
@@ -52,6 +52,6 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 
 ## 版本
 
-当前版本：`0.8.0`
+当前版本：`0.8.1`
 
 飞牛应用依赖飞牛应用中心的 Node.js v22，不使用 Docker。
