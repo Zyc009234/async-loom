@@ -1,0 +1,14 @@
+{
+  ".url": {
+    "async-loom.Application": {
+      "title": "异步录屏",
+      "desc": "查看飞牛上的录屏、局域网地址和分享页",
+      "icon": "images/icon_{0}.png",
+      "type": "url",
+      "protocol": "http",
+      "port": "38471",
+      "url": "/",
+      "allUsers": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+appname               = async-loom
+version               = 0.8.5
+display_name          = 异步录屏
+desc                  = Windows 录屏后直接上传到飞牛本地保存，自动生成局域网或外网分享链接；客户端不连飞牛也能录屏并保存在本机。首页可直接下载已签名的 Windows 客户端。
+platform              = all
+source                = thirdparty
+maintainer            = async-loom
+distributor           = async-loom
+install_dep_apps      = nodejs_v22
+service_port          = 38471
+checkport             = true
+ctl_stop              = true
+desktop_uidir         = ui
+desktop_applaunchname = async-loom.Application
+changelog             = 0.8.5：Windows 客户端支持离线录屏、保存到本机、本机录屏列表和稍后上传分享；飞牛首页内置 Windows 客户端下载（含版本与 SHA256），安装包已签名。
+checksum              = e7a8480684f241fb3b630bb1aad6d071

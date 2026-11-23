@@ -1,0 +1,42 @@
+# binaries and archives
+*.exe
+*.msi
+*.fpk
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# secrets and credentials
+.env
+.env.*
+.minio-credentials
+signing/
+*.pfx
+*.p12
+*.pem
+*.key
+*.crt
+*.cer
+*.pass
+
+# local data
+*.sqlite
+*.db
+*.sqlite3
+*.mp4
+*.mov
+*.webm
+*.avi
+
+# build debris
+node_modules/
+work/
+release/
+dist/
+build/
+out/
+target/
+.cache/

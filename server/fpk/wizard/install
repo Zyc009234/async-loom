@@ -1,0 +1,18 @@
+[
+  {
+    "stepTitle": "安装说明",
+    "items": [
+      {
+        "type": "tips",
+        "helpText": "安装后服务监听 38471 端口。Windows 客户端连接飞牛局域网地址时生成局域网链接；连接已配置好的域名时，自动生成同一个域名的外网链接。视频、数据库和分享页都保存在飞牛本地。"
+      },
+      {
+        "type": "text",
+        "field": "wizard_public_url",
+        "label": "公网访问地址（可选）",
+        "initValue": "",
+        "helpText": "如果飞牛已可通过公网域名或公网 IP 访问，请填写完整地址，例如 https://video.example.com 或 http://1.2.3.4:38471。留空则只使用局域网链接。"
+      }
+    ]
+  }
+]

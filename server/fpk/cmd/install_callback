@@ -1,0 +1,8 @@
+#!/bin/bash
+mkdir -p "${TRIM_PKGVAR}"
+if [ -n "${wizard_public_url}" ]; then
+  printf '%s\n' "${wizard_public_url}" > "${TRIM_PKGVAR}/public-url"
+else
+  : > "${TRIM_PKGVAR}/public-url"
+fi
+exit 0

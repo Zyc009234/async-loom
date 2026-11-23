@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 异步录屏 0.8.5 MSI (built on Linux with wixl). Same UpgradeCode/paths as the 0.8.4 Tauri WiX MSI,
+     so it upgrades an existing 0.8.4 MSI install in place. No WixUI dialogs (wixl has no UI extension).
+     wixl 0.106 drops non-ASCII table strings, so table strings use ASCII placeholders (ALCN*) that
+     msi_fix_cn.py replaces with GBK (codepage 936) strings after the build. Summary info may be Chinese. -->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="ALCNNAME" Language="2052" Codepage="936" Version="0.8.5" Manufacturer="ALCNNAME"
+           UpgradeCode="3285E351-91C6-5357-8CAD-92B113A0F507">
+    <Package InstallerVersion="450" Compressed="yes" InstallScope="perMachine" Languages="2052" SummaryCodepage="936"
+             Description="异步录屏 0.8.5" Comments="录一段屏幕，留下链接，对方有空再看。" Manufacturer="异步录屏"/>
+    <Media Id="1" Cabinet="app.cab" EmbedCab="yes"/>
+    <MajorUpgrade AllowDowngrades="no" DowngradeErrorMessage="ALCNDOWNGRADE"/>
+    <Icon Id="ProductIcon" SourceFile="files/icon.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="ProductIcon"/>
+    <Property Id="ARPNOMODIFY" Value="1"/>
+    <Property Id="ARPNOREPAIR" Value="yes"/>
+    <Property Id="ARPURLINFOABOUT" Value="https://www.zhaoyoucai.xyz/"/>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLDIR" Name="ALCNNAME">
+          <Component Id="MainExe" Guid="7C4D4A0B-58E4-4F0B-9B1E-2D6C0F8A5C11" Win64="yes">
+            <File Id="MainExeFile" Name="async-loom-desktop.exe" Source="files/async-loom-desktop.exe" KeyPath="yes"/>
+          </Component>
+          <Component Id="Ffmpeg" Guid="0F5B9E1E-3C7B-4F4B-8E0B-6E4B1A2C3D21" Win64="yes">
+            <File Id="FfmpegFile" Name="ffmpeg.exe" Source="files/ffmpeg.exe" KeyPath="yes"/>
+          </Component>
+          <Component Id="FfmpegDocs" Guid="9A3C1D55-0E3B-4B8E-A1C2-5D6E7F809A31" Win64="yes">
+            <File Id="FfmpegLicense" Name="FFMPEG-LICENSE.txt" Source="files/FFMPEG-LICENSE.txt" KeyPath="yes"/>
+            <File Id="FfmpegReadme" Name="FFMPEG-README.txt" Source="files/FFMPEG-README.txt"/>
+          </Component>
+          <Component Id="RegistryEntries" Guid="1B2C3D4E-5F60-4718-92A3-B4C5D6E7F801" Win64="yes">
+            <RegistryValue Root="HKCU" Key="Software\ALCNNAME\ALCNNAME" Name="InstallDir" Type="string" Value="[INSTALLDIR]" KeyPath="yes"/>
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="ALCNNAME">
+          <Component Id="ApplicationShortcut" Guid="2C3D4E5F-6071-4829-A3B4-C5D6E7F80912">
+            <Shortcut Id="ApplicationStartMenuShortcut" Name="ALCNNAME" Description="ALCNNAME" Icon="ProductIcon" Target="[INSTALLDIR]async-loom-desktop.exe" WorkingDirectory="INSTALLDIR"/>
+            <RemoveFolder Id="RemoveApplicationProgramsFolder" On="uninstall"/>
+            <RegistryValue Root="HKCU" Key="Software\ALCNNAME\ALCNNAME" Name="Start Menu Shortcut" Type="integer" Value="1" KeyPath="yes"/>
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop">
+        <Component Id="ApplicationShortcutDesktop" Guid="3D4E5F60-7182-493A-B4C5-D6E7F8091A23">
+          <Shortcut Id="ApplicationDesktopShortcut" Name="ALCNNAME" Description="ALCNNAME" Icon="ProductIcon" Target="[INSTALLDIR]async-loom-desktop.exe" WorkingDirectory="INSTALLDIR"/>
+          <RemoveFolder Id="RemoveDesktopFolder" On="uninstall"/>
+          <RegistryValue Root="HKCU" Key="Software\ALCNNAME\ALCNNAME" Name="Desktop Shortcut" Type="integer" Value="1" KeyPath="yes"/>
+        </Component>
+      </Directory>
+    </Directory>
+    <Feature Id="MainProgram" Title="ALCNNAME" Level="1" ConfigurableDirectory="INSTALLDIR">
+      <ComponentRef Id="MainExe"/>
+      <ComponentRef Id="Ffmpeg"/>
+      <ComponentRef Id="FfmpegDocs"/>
+      <ComponentRef Id="RegistryEntries"/>
+      <ComponentRef Id="ApplicationShortcut"/>
+      <ComponentRef Id="ApplicationShortcutDesktop"/>
+    </Feature>
+  </Product>
+</Wix>

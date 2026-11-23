@@ -10,11 +10,7 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 - [Windows MSI](https://www.zhaoyoucai.xyz/downloads/async-loom/0.8.4/async-loom-0.8.4-x64-zh-CN.msi)
 - [产品介绍与使用教程](https://www.zhaoyoucai.xyz/async/)
 
-飞牛原生安装包不在 GitHub Release 中。安装包存放于飞牛文件空间：
-
-```text
-/vol1/1000/loom/async-loom-0.8.4.fpk
-```
+飞牛安装包见 [GitHub Release v0.8.5](https://github.com/Zyc009234/async-loom/releases/download/v0.8.5/async-loom-0.8.5.fpk)（仅 .fpk，未标为 latest，以免 Windows 客户端检查更新失败）。Windows 客户端请在飞牛应用内下载。
 
 ## 当前能力
 
@@ -55,3 +51,15 @@ Windows 录屏后直接上传到自己的飞牛 NAS，自动生成局域网或�
 当前版本：`0.8.4`
 
 飞牛应用依赖飞牛应用中心的 Node.js v22，不使用 Docker。
+
+## 源码说明
+
+本仓库包含飞牛端源码，以及从 Windows 安装包中还原的前端。没有 Rust / Tauri 桌面端源码。0.8.5 的 Windows 客户端是在 0.8.4 的 Tauri 2.12.5 二进制上修补前端后重新打包的，并不能从本仓库独立编译出 exe。
+
+目录结构：
+
+- `server/`：飞牛原生应用（Node.js，监听 38471）。`server/server.mjs` 为 0.8.5 服务端；另有应用配置、图标，以及 fpk 打包用的 `server/fpk/`（manifest、安装脚本、向导等）。不包含 Windows 安装包二进制。
+- `desktop-frontend/`：从 0.8.4 Windows 安装包中还原的前端（压缩后的资源，以及美化后的 `index.pretty.js`）。这不是完整的桌面端源码，也没有对应的 Rust 源码。
+- `scripts/`：把 0.8.4 补丁为 0.8.5 的脚本（前端、服务端、exe 嵌入、NSIS/MSI/fpk 打包与签名调用）。这些脚本里的路径是当初的构建目录，签名私钥和证书不在本仓库。
+
+当前版本：飞牛端 `0.8.5`；仓库里还原的 Windows 前端对应 `0.8.4`，0.8.5 的前端改动见 `scripts/patch_frontend.py`。
